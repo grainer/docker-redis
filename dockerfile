@@ -46,6 +46,9 @@ RUN set -eux; \
   # see also https://github.com/docker-library/redis/issues/4#issuecomment-50780840
   # (more exactly, this makes sure the default behavior of "save on SIGTERM" stays functional by default)
   \
+  # trying to fix this error https://stackoverflow.com/questions/37103054/redis-installation-fails-when-running-make-command
+  make distclean \
+  make -C /usr/src/redis/deps hiredis jemalloc linenoise lua geohash-int \
   make -C /usr/src/redis -j "$(nproc)" all; \
   make -C /usr/src/redis install; \
   \
