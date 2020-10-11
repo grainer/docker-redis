@@ -8,11 +8,13 @@
 # # invoke redis with our custom config file
 # CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
 # ---- bitnami image
-FROM bitnami/redis:latest
+FROM bitnami/redis:5.0
 # for security mesures we use the user created instaid of root user
 USER 1001
 # allow remote connection
 EXPOSE 6379
 ENV ALLOW_EMPTY_PASSWORD=yes
+# ENV REDIS_PASSWORD=testing
+COPY redis.conf /usr/local/etc/redis/redis.conf
 # invoke redis 
-CMD ["redis-server"]
+CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
