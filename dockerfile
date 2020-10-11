@@ -4,7 +4,7 @@ USER redis
 # allow remote connection
 EXPOSE 6379
 
-ENV  REDIS_PASSWORD="testing"
+ENV  ALLOW_EMPTY_PASSWORD yes
 # copy the config file
 # COPY redis.conf /usr/local/etc/redis/redis.conf
 # invoke redis with our custom config file
