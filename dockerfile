@@ -1,4 +1,4 @@
-FROM redis:5-alpine
+FROM bitnami/redis:6
 # for security mesures we use the user created instaid of root user
 USER redis
 # allow remote connection
