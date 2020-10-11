@@ -1,4 +1,4 @@
-FROM bitnami/redis:6
+FROM bitnami/redis:latest
 # for security mesures we use the user created instaid of root user
 USER redis
 # allow remote connection
