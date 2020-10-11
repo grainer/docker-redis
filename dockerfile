@@ -3,6 +3,8 @@ FROM bitnami/redis:latest
 USER redis
 # allow remote connection
 EXPOSE 6379
+
+ENV  REDIS_PASSWORD="testing"
 # copy the config file
 # COPY redis.conf /usr/local/etc/redis/redis.conf
 # invoke redis with our custom config file
