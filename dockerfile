@@ -13,6 +13,6 @@ FROM bitnami/redis:latest
 USER 1001
 # allow remote connection
 EXPOSE 6379
-ENV REDIS_PASSWORD=testing
+ENV ALLOW_EMPTY_PASSWORD=yes
 # invoke redis 
 CMD ["redis-server"]
